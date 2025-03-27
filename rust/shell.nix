@@ -13,7 +13,7 @@ let
   commitHooks = pkgs.callPackage ./nix/commit-hooks.nix { inherit crate2nix rustToolchain; };
 in
 pkgs.mkShell {
-  name = "base-devshell";
+  name = "rust-devshell";
   packages = with pkgs; [
     crate2nix
     nixfmt-rfc-style
