@@ -13,6 +13,22 @@
         '';
       };
 
+      rust = {
+        path = ./rust;
+        description = "rust project w/ fenix + crate2nix";
+        welcomeText = ''
+          # next steps
+          ## update pins
+              npins upgrade && npins update
+          ## make sure nix/rust-toolchain.nix is up to date
+              fenix.fromToolchainName {
+                sha256 = "...";
+              }
+          ## build with nix
+              nix build -L -f default.nix package
+        '';
+      };
+
       default = base;
     };
   };
