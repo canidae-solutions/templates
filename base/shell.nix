@@ -4,9 +4,12 @@ let
 in
 
 {
-  pkgs ? nixpkgs
+  pkgs ? nixpkgs,
 }:
 
+let
+  commitHooks = pkgs.callPackage ./commit-hooks.nix { };
+in
 pkgs.mkShell {
   name = "base-devshell";
   packages = with pkgs; [
@@ -14,4 +17,8 @@ pkgs.mkShell {
     nixd
     npins
   ];
+
+  shellHook = ''
+    ${commitHooks.shellHook}
+  '';
 }
