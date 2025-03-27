@@ -20,6 +20,7 @@ git-hooks.run {
     nixfmt-rfc-style = {
       enable = true;
       excludes = [
+        "nix/rust-build\\.nix$"
         "npins/default\\.nix$"
       ];
     };
