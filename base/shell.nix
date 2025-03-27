@@ -8,7 +8,7 @@ in
 }:
 
 let
-  commitHooks = pkgs.callPackage ./commit-hooks.nix { };
+  commitHooks = pkgs.callPackage ./nix/commit-hooks.nix { };
 in
 pkgs.mkShell {
   name = "base-devshell";

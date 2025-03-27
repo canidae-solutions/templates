@@ -1,5 +1,5 @@
 let
-  pins = import ./npins;
+  pins = import ../npins;
 in
 
 {
